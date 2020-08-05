@@ -34,7 +34,9 @@ export class ShopService {
     return this.http.get<ShopProduct>(`${environment.baseUrl}/store/public/category/product/${id}`);
   }
 
-  getProductAvatar(id: number){
-
+  getProductAvatar(id: number): Observable<Blob>{
+    return this.http.get(`${environment.baseUrl}/store/public/product/avatar/${id}`, {
+      responseType: 'blob',
+    });
   }
 }

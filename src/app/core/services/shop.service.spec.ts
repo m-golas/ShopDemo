@@ -131,4 +131,19 @@ describe('ShopService', () => {
     httpTestingController.verify();
   })
 
+  it('sould geet product product avatar', () =>{
+    const url: string = `${baseUrl}/store/public/product/avatar/1`;
+    const mockData: Blob = new Blob;
+
+    service.getProductAvatar(1).subscribe( data => {
+      expect(data).toEqual(mockData);
+    })
+
+    const req = httpTestingController.expectOne(url);
+    req.flush(mockData);
+    expect(req.request.method).toEqual('GET');
+
+    httpTestingController.verify();
+  })
+
 });
