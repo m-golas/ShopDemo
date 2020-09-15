@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let category of categories">
+        <button (click)="selectCategory.emit(category)">{{category.displayName}}</button>
+    </li>
+</ul>
+

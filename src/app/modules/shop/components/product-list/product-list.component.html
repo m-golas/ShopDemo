@@ -1,0 +1,5 @@
+<div *ngFor="let product of products">
+    {{product.displayName}}
+    <button (click)="addToCart.emit(product)">+</button>
+    <button (click)="substractFromCart.emit(product)">-</button>
+</div>

@@ -131,7 +131,7 @@ describe('ShopService', () => {
     httpTestingController.verify();
   })
 
-  it('sould geet product product avatar', () =>{
+  it('should get product avatar', () =>{
     const url: string = `${baseUrl}/store/public/product/avatar/1`;
     const mockData: Blob = new Blob;
 

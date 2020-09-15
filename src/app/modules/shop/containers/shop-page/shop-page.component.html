@@ -1,0 +1,22 @@
+<app-category-list 
+    [categories]="categories$ | async"
+    (selectCategory)="selectCategory($event)"
+>
+</app-category-list>
+
+<app-product-list
+    [products]="products$ | async"
+    (addToCart)="addToCart($event)"
+    (substractFromCart)="substractFromCart($event)"
+></app-product-list>
+
+<span>Suma przedmiotow: {{amount$ | async}} Cena: {{price$ | async}}</span>
+<ng-container *ngIf="cart$ | async as cart">
+<pre *ngFor="let item of cart">
+<code>{{item | json}}</code>
+</pre>
+</ng-container>
+
+
+
+
