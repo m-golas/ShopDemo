@@ -1,0 +1,8 @@
+<app-header-layout>
+    <ng-container amount-icon  *ngIf="isCartLoaded$ | async">
+        <app-basket-icon [amount]="amount$ | async"></app-basket-icon>
+    </ng-container>
+    <ng-container *ngIf="isCartLoaded$ | async">
+        <app-basket-popup [amount]="amount$ | async" [cart]="cart$ | async" [price]="price$ | async"></app-basket-popup>
+    </ng-container>
+</app-header-layout>

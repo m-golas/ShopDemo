@@ -1,7 +1,6 @@
+import { ShopCategory } from 'src/app/core/models/shop-category';
 import * as fromCategory from './category.reducer'
 import * as fromAction from '../actions'
-import { ShopCategory } from 'src/app/core/models/shop-category';
-import { from } from 'rxjs';
 
 describe('CategoryReducer', () => {
     describe('undefined action', () => {
@@ -29,7 +28,7 @@ describe('CategoryReducer', () => {
             const action = fromAction.categoriesLoaded({categories});
             const state = fromCategory.reducer(initialState,action);
 
-            expect(state.categoryLoaded).toEqual(true);
+            expect(state.categoriesLoaded).toEqual(true);
             expect(state.selectedCategory).toEqual(0);
             expect(state.entities).toEqual(entities);
             expect(state.ids).toEqual([1,2]);
@@ -41,7 +40,7 @@ describe('CategoryReducer', () => {
             const state = fromCategory.reducer(initialState,action);
             const nextState = fromCategory.reducer(state,action);
 
-            expect(nextState.categoryLoaded).toEqual(true);
+            expect(nextState.categoriesLoaded).toEqual(true);
             expect(nextState.selectedCategory).toEqual(0);
             expect(nextState.entities).toEqual(entities);
             expect(nextState.ids).toEqual([1,2]);
@@ -78,10 +77,10 @@ describe('CategoryReducer', () => {
             expect(result).toEqual(5);
         });
 
-        it('should return categoryLoaded', () => {
-            const state = {...fromCategory.initialState, categoryLoaded: true};
+        it('should return categoriesLoaded', () => {
+            const state = {...fromCategory.initialState, categoriesLoaded: true};
 
-            const result = fromCategory.getCategoryLoaded(state);
+            const result = fromCategory.areCategoriesLoaded(state);
             expect(result).toBeTruthy();
         });
     });

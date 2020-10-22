@@ -1,6 +1,6 @@
+import { ShopProduct } from 'src/app/core/models/shop-product';
 import * as fromProduct from './product.reducer';
 import * as fromAction from '../actions';
-import { ShopProduct } from 'src/app/core/models/shop-product';
 
 describe('ProductReducer', () => {
     
@@ -73,5 +73,4 @@ describe('ProductReducer', () => {
             expect(result).toEqual([3]);
         })
     })
-
 })

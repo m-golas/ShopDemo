@@ -1,6 +1,6 @@
+import { ShopProduct } from 'src/app/core/models/shop-product';
 import * as fromCart from './cart.reducer';
 import * as fromAction from '../actions';
-import { ShopProduct } from 'src/app/core/models/shop-product';
 
 describe('CartReducer', () => {
 
@@ -151,6 +151,16 @@ describe('CartReducer', () => {
             expect(state.entities).toEqual({2: {amount: 99, item: product}});
             expect(state.amountOfItems).toEqual(99);
             expect(state.totalPrice).toEqual(990);
+        })
+    })
+
+    describe('resetCart action', () => {
+        it('should return initialState', () => {
+            const { initialState } = fromCart;
+            const action = fromAction.resetCart();
+            const state = fromCart.reducer(snapState, action);
+
+            expect(state).toEqual(initialState);
         })
     })
 

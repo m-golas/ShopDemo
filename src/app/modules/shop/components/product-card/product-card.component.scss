@@ -1,0 +1,45 @@
+@import 'variables';
+
+.product-card{
+    @include card;
+    @include shadow-lg;
+    
+    &__title{
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    &__footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding-top: 15px;
+        margin-top: auto;
+    }
+
+    &__price{
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+
+        &--suffix{
+            font-size: 18px;
+        }
+    }
+
+    &__add-to-cart{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        padding: 0px;
+        border: none;
+        border-radius: 40px;
+        background-color: $color-secondary;
+    }
+
+    &__cart-icon{
+        color: white;
+    }
+}

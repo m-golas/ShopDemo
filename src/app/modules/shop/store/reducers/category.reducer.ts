@@ -6,7 +6,7 @@ import * as shopAction from '../actions';
 export const categoryFeatureKey = 'category';
 
 export interface State extends EntityState<ShopCategory> {
-    categoryLoaded: boolean;
+    categoriesLoaded: boolean;
     selectedCategory: number;
 }
 
@@ -16,7 +16,7 @@ export const adapter: EntityAdapter<ShopCategory> = createEntityAdapter<ShopCate
 });
 
 export const initialState = adapter.getInitialState({
-    categoryLoaded: false,
+    categoriesLoaded: false,
     selectedCategory: 0,
 })
 
@@ -24,7 +24,7 @@ export const reducer = createReducer(
     initialState,
 
     on(shopAction.categoriesLoaded, (state, { categories }) => (
-        adapter.addMany(categories, {...state,categoryLoaded: true})
+        adapter.addMany(categories, {...state,categoriesLoaded: true})
     )),
 
     on(shopAction.categorySelected, (state, {categoryId}) => (
@@ -43,4 +43,4 @@ export const reducer = createReducer(
 )
 
 export const getSelectedCategory = (state: State) => state.selectedCategory;
-export const getCategoryLoaded = (state: State) => state.categoryLoaded;
+export const areCategoriesLoaded = (state: State) => state.categoriesLoaded;

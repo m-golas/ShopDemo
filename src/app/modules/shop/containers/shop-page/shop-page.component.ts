@@ -1,40 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { State } from '../../../../core/store/reducers/index';
 import { ShopCategory } from 'src/app/core/models/shop-category';
 import { ShopProduct } from 'src/app/core/models/shop-product';
-import { CartItem } from 'src/app/core/models/cart-item';
-import * as shopSelector from '../../store/reducers';
+import * as fromShop from '../../store/reducers';
 import * as shopAction from '../../store/actions';
 
 @Component({
   selector: 'app-shop-page',
   templateUrl: './shop-page.component.html',
-  styleUrls: ['./shop-page.component.scss']
+  styleUrls: ['./shop-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {'class': 'flex-container'}
 })
 export class ShopPageComponent implements OnInit {
-
   categories$: Observable<ShopCategory[]>;
-  products$: Observable<ShopProduct[]>
-  cart$: Observable<CartItem[]>;
-  amount$: Observable<number>;
-  price$: Observable<number>;
+  products$: Observable<ShopProduct[]>;
+  selectedCategory$: Observable<ShopCategory>;
+  showSidenav$: Observable<boolean>;
 
   constructor(private store: Store<State>) {
-    this.categories$ = this.store.select(shopSelector.getAllCategories);
-    this.products$ = this.store.select(shopSelector.getSelectedProducts);
-    this.cart$ = this.store.select(shopSelector.getCartItems);
-    this.amount$ = this.store.select(shopSelector.getAmountOfItems);
-    this.price$ = this.store.select(shopSelector.getTotalPrice);
+    this.categories$ = this.store.select(fromShop.getAllCategories);
+    this.products$ = this.store.select(fromShop.getSelectedProducts);
+    this.selectedCategory$ = this.store.select(fromShop.getSelectedCategory);
+    this.showSidenav$ = this.store.select(fromShop.selectShowSidenav);
   }
 
   ngOnInit(): void {
-    this.store.dispatch(shopAction.loadShopCategories());
-  }
-
-  selectCategory(category: ShopCategory): void {
-    this.store.dispatch(shopAction.selectCategory({categoryId: category.id}));
   }
 
   addToCart(product: ShopProduct): void {
@@ -45,4 +38,7 @@ export class ShopPageComponent implements OnInit {
     this.store.dispatch(shopAction.substractProductFromCart({product}));
   }
 
+  switchMenu(): void{
+    this.store.dispatch(shopAction.switchSidenav());
+  }
 }

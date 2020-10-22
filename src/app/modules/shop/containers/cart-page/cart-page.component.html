@@ -1,0 +1,9 @@
+<app-cart-layout [amount]="amount$ | async" (resetCart)="resetCart()">
+    <app-cart-list cart-list
+    [cart]="cart$ | async" 
+    (decreaseAmount) = "substractFromCart($event)"
+    (increaseAmount) = "addToCart($event)"
+    (removeItem) = "removeProductFromCart($event)"
+    ></app-cart-list>
+    <app-cart-summary summary [price]="price$ | async"></app-cart-summary>
+</app-cart-layout>

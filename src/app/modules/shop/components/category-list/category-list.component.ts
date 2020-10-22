@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { ShopCategory } from 'src/app/core/models/shop-category';
 
 @Component({
@@ -8,6 +8,6 @@ import { ShopCategory } from 'src/app/core/models/shop-category';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CategoryListComponent{
-  @Input() categories!: ShopCategory[];
-  @Output() selectCategory = new EventEmitter<ShopCategory>();
+  @Input() selected: ShopCategory;
+  @Input() categories: ShopCategory[];
 }

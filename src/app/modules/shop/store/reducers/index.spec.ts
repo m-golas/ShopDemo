@@ -1,5 +1,5 @@
-import * as fromShop from './index';
 import { ShopProduct } from 'src/app/core/models/shop-product';
+import * as fromShop from './index';
 
 describe('ShopReducer', () => {
     it('should return selected products', () => {

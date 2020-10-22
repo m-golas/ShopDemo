@@ -38,6 +38,10 @@ export const reducer = createReducer(
 
     on(shopAction.changeProductAmountinCart, (state, {product,amount}) => (
         changeAmount(state,product,amount,doesExist(product,state))
+    )),
+
+    on(shopAction.resetCart, () => (
+        initialState
     ))
 )
 

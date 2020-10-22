@@ -1,0 +1,35 @@
+
+$base-background: #e6e8ec;
+$second-background: #f7f9fb;
+$color-secondary: red;
+
+$breakpoint-sm: 576px;
+$breakpoint: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+@mixin main-container {
+    display: flex;
+    max-width: 1200px;
+    padding: 0px 16px;
+    margin: 0 auto;
+    position: relative;
+    height: inherit;
+}
+
+@mixin card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: white;
+    border: none;
+}
+
+@mixin shadow-sm{
+    box-shadow: 0px 2px 6px 1px $base-background;
+}
+
+@mixin shadow-lg{
+    box-shadow: 0px 8px 16px $base-background;
+}

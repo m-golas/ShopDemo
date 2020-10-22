@@ -1,0 +1,117 @@
+@import 'variables';
+
+.shop-main{
+    background-color: $second-background;
+    height: 100%;
+    overflow: hidden;
+}
+
+.shop-container {
+    @include main-container;
+
+    &__sidebar{
+        display: block;
+        position: absolute;
+        z-index: 2;
+        width: 240px;
+        height: 100%;
+        padding-top: 30px;
+        padding-right: 40px;
+        background-color: $base-background;
+        transition: transform .5s;
+        transform: translateX(-256px);
+
+        &--visible{
+            transform: translateX(0px);
+        }
+
+        @media (min-width: $breakpoint){
+            position: relative;
+            height: auto;
+            transform: translateX(0px);
+        }
+
+        &:before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100vw;
+            bottom: 0;
+            width: 100vw;
+            background-color: $base-background;
+            box-sizing: border-box;
+        }
+    }
+
+    &__main{
+        flex: 1 1;
+        position: relative;
+
+        &-header{
+            display: flex;
+            position: absolute;
+            width: calc(100% + 32px);
+            height: 50px;
+            margin: 0 -16px;
+            border-bottom: 1px solid $base-background;
+            transition: transform .5s;
+
+            &--visible{
+                transform: translateX(256px);
+            }
+            
+            @media (min-width: $breakpoint){
+                display: none;
+            }
+        }
+
+        &-content{
+            padding-top: 90px;
+            padding-bottom: 30px;
+
+            @media (max-width: $breakpoint){
+                &::before{
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    top: 50px;
+                    width: calc(100% + 32px);
+                    height: 100%;
+                    margin: 0 -16px;
+                    background-color: transparent;
+                    transition: background-color .5s;                  
+                }
+    
+                &--blur{
+                    &::before{
+                        z-index: 1;
+                        background-color: rgb(1, 1, 1,0.6);
+                    }
+                }
+            }
+
+            @media (min-width: $breakpoint){
+                padding-top: 30px;
+                padding-left: 40px;
+                padding-right: 15px;
+            }
+        }
+    }
+}
+
+.category-content-switch{
+    background-color: transparent;
+    border:none;
+    outline: 0px transparent;
+
+    &__text{
+        display: inline;
+        font-weight: 600;
+
+        &--close{
+            @media (max-width: 430px){
+                display: none;
+            }
+        }
+    }
+}

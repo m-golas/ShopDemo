@@ -20,23 +20,11 @@ export class ShopService {
     return this.http.get<ShopCategory>(`${environment.baseUrl}/store/public/category/${id}`);
   }
 
-  getCategoryAvatar(id: number): Observable<Blob>{
-    return this.http.get(`${environment.baseUrl}/store/public/category/avatar/${id}`,{
-      responseType: 'blob',
-    });
-  }
-
   getProductsByCategory(id: number): Observable<ShopProduct[]>{
     return this.http.get<ShopProduct[]>(`${environment.baseUrl}/store/public/category/products/active/${id}`);
   }
 
   getProduct(id: number): Observable<ShopProduct>{
     return this.http.get<ShopProduct>(`${environment.baseUrl}/store/public/category/product/${id}`);
-  }
-
-  getProductAvatar(id: number): Observable<Blob>{
-    return this.http.get(`${environment.baseUrl}/store/public/product/avatar/${id}`, {
-      responseType: 'blob',
-    });
   }
 }

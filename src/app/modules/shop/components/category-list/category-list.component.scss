@@ -1,0 +1,60 @@
+@import 'variables';
+
+@mixin highlight {
+    background-color: $second-background;
+
+    &::after{
+        right: -48px;
+        
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 48px;
+        background-color: $second-background;
+    }
+
+    &::before{
+        left: -3px;
+        
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background-color: $color-secondary;
+    }
+}
+
+.selector-title{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.aside-menu{
+    margin-top: 30px;
+    
+    &__link{
+        font-family: inherit;
+        font-size: 100%;
+
+        display: flex;
+        position: relative;
+        align-items: center;
+        margin-right: -2.5rem;
+        width: 100%;
+        background-color: transparent;
+        padding: 8px 0px 8px 8px;
+        margin-left: -8px;
+
+        &:hover{
+            @include highlight();
+        }
+
+        &--is-active{
+            @include highlight();
+            font-weight: 600;
+        }
+    }
+
+}

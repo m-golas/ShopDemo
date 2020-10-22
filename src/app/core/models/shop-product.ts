@@ -4,5 +4,4 @@ export interface ShopProduct {
     displayName: string;
     description: string;
     price: number;
-    avatar?: Blob;
 }

@@ -65,21 +65,6 @@ describe('ShopService', () => {
     httpTestingController.verify();
   })
 
-  it('should get category avatar', () => {
-    const url: string = `${baseUrl}/store/public/category/avatar/1`;
-    const mockData: Blob = new Blob;
-
-    service.getCategoryAvatar(1).subscribe(data => {
-      expect(data).toEqual(mockData);
-    })
-
-    const req = httpTestingController.expectOne(url);
-    req.flush(mockData);
-
-    expect(req.request.method).toEqual('GET');
-    httpTestingController.verify();
-  })
-
   it('should get products by category', () => {
     const url: string = `${baseUrl}/store/public/category/products/active/1`;
     const mockData: ShopProduct[] = [
@@ -130,20 +115,4 @@ describe('ShopService', () => {
 
     httpTestingController.verify();
   })
-
-  it('should get product avatar', () =>{
-    const url: string = `${baseUrl}/store/public/product/avatar/1`;
-    const mockData: Blob = new Blob;
-
-    service.getProductAvatar(1).subscribe( data => {
-      expect(data).toEqual(mockData);
-    })
-
-    const req = httpTestingController.expectOne(url);
-    req.flush(mockData);
-    expect(req.request.method).toEqual('GET');
-
-    httpTestingController.verify();
-  })
-
 });
