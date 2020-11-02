@@ -1,13 +1,12 @@
 @import 'variables';
 
-.footer{
-    background-color: white;
-    height: 50px;
+.footer {
+  background-color: white;
+  height: 50px;
 
-
-    &__container{
-        @include main-container;
-        align-items: center;
-        justify-content: flex-end;
-    }
+  &__container {
+    @include main-container;
+    align-items: center;
+    justify-content: flex-end;
+  }
 }

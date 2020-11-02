@@ -6,7 +6,7 @@ import { ShopProduct } from 'src/app/core/models/shop-product';
   selector: 'app-cart-list',
   templateUrl: './cart-list.component.html',
   styleUrls: ['./cart-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartListComponent {
   @Input() cart: CartItem[];
@@ -14,5 +14,5 @@ export class CartListComponent {
   @Output() decreaseAmount = new EventEmitter<ShopProduct>();
   @Output() removeItem = new EventEmitter<ShopProduct>();
 
-  constructor() { }
+  constructor() {}
 }

@@ -8,9 +8,8 @@ describe('BasketIconComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BasketIconComponent ]
-    })
-    .compileComponents();
+      declarations: [BasketIconComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

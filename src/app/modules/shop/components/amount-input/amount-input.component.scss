@@ -1,25 +1,25 @@
 @import 'variables';
 
-.amount-input{
+.amount-input {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid $base-background;
+
+  &__amount {
+    min-width: 40px;
+    text-align: center;
+  }
+
+  &__button {
     display: flex;
     align-items: center;
+    padding: 2px 2px;
     border-radius: 8px;
-    border: 1px solid $base-background;
+    border: 0;
 
-    &__amount{
-        min-width: 40px;
-        text-align: center;
+    &:hover {
+      background-color: $base-background;
     }
-
-    &__button{
-        display: flex;
-        align-items: center;
-        padding: 2px 2px;
-        border-radius: 8px;
-        border: 0;
-
-        &:hover{
-            background-color: $base-background;
-        }
-    }
+  }
 }

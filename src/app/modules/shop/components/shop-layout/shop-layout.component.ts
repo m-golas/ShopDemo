@@ -5,11 +5,11 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
   templateUrl: './shop-layout.component.html',
   styleUrls: ['./shop-layout.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {'class': 'flex-container'}
+  host: { class: 'flex-container' },
 })
 export class ShopLayoutComponent {
   @Input() open: boolean;
   @Output() switchMenu = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor() {}
 }

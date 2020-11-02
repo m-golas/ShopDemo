@@ -12,7 +12,7 @@ import * as shopAction from '../../store/actions';
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {'class': 'flex-container'}
+  host: { class: 'flex-container' },
 })
 export class CartPageComponent implements OnInit {
   isCartLoaded$: Observable<boolean>;
@@ -27,19 +27,18 @@ export class CartPageComponent implements OnInit {
     this.price$ = this.store.select(fromShop.getTotalPrice);
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   addToCart(product: ShopProduct): void {
-    this.store.dispatch(shopAction.addProductToCart({product}));
+    this.store.dispatch(shopAction.addProductToCart({ product }));
   }
 
   substractFromCart(product: ShopProduct): void {
-    this.store.dispatch(shopAction.substractProductFromCart({product}));
+    this.store.dispatch(shopAction.substractProductFromCart({ product }));
   }
 
   removeProductFromCart(product: ShopProduct): void {
-    this.store.dispatch(shopAction.removeProductFromCart({product}));
+    this.store.dispatch(shopAction.removeProductFromCart({ product }));
   }
 
   resetCart(): void {

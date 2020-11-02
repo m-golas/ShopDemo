@@ -5,12 +5,12 @@ import { CartItem } from '../../models/cart-item';
   selector: 'app-basket-popup',
   templateUrl: './basket-popup.component.html',
   styleUrls: ['./basket-popup.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BasketPopupComponent {
   @Input() amount: number;
   @Input() cart: CartItem[];
   @Input() price: number;
 
-  constructor() { }
+  constructor() {}
 }

@@ -9,16 +9,16 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 describe('CategoryLoadGuard', () => {
   let guard: CategoryLoadGuard;
   let mockStore: MockStore;
-  let httpClient: HttpClient; 
+  let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
   let router = {
-    navigate: jasmine.createSpy('navigate')
+    navigate: jasmine.createSpy('navigate'),
   };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [provideMockStore(),{provide: Router, useValue: router}]
+      providers: [provideMockStore(), { provide: Router, useValue: router }],
     });
     guard = TestBed.inject(CategoryLoadGuard);
     mockStore = TestBed.inject(MockStore);

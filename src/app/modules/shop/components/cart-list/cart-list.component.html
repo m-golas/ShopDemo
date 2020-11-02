@@ -1,19 +1,20 @@
 <section class="cart-list">
-    <ng-container *ngFor="let item of cart">
-        <article class="cart-list__product">
-            <div class="cart-list__title-container">
-                <h2 class="cart-list__title">{{item.item.displayName}}</h2>
-                <app-delete-button class="cart-list__title-delete" (remove)="removeItem.emit(item.item)"></app-delete-button>
-            </div>
-            <div class="product-info">
-                <app-amount-input 
-                [amount]="item.amount" 
-                (increase)="increaseAmount.emit(item.item)" 
-                (decrease)="decreaseAmount.emit(item.item)">
-                </app-amount-input>
-                <span class="product-info__price">{{item.item.price}}zł</span>
-                <app-delete-button class="product-info__delete" (remove)="removeItem.emit(item.item)"></app-delete-button>
-            </div>
-        </article>
-    </ng-container>
+  <ng-container *ngFor="let item of cart">
+    <article class="cart-list__product">
+      <div class="cart-list__title-container">
+        <h2 class="cart-list__title">{{ item.item.displayName }}</h2>
+        <app-delete-button class="cart-list__title-delete" (remove)="removeItem.emit(item.item)"></app-delete-button>
+      </div>
+      <div class="product-info">
+        <app-amount-input
+          [amount]="item.amount"
+          (increase)="increaseAmount.emit(item.item)"
+          (decrease)="decreaseAmount.emit(item.item)"
+        >
+        </app-amount-input>
+        <span class="product-info__price">{{ item.item.price }}zł</span>
+        <app-delete-button class="product-info__delete" (remove)="removeItem.emit(item.item)"></app-delete-button>
+      </div>
+    </article>
+  </ng-container>
 </section>

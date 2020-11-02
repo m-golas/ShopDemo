@@ -5,7 +5,7 @@ import { ShopProduct } from 'src/app/core/models/shop-product';
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductCardComponent {
   @Input() product: ShopProduct;

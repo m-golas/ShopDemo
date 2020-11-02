@@ -10,15 +10,16 @@ import { HeaderLayoutComponent } from './components/header-layout/header-layout.
 import { BasketIconComponent } from './components/basket-icon/basket-icon.component';
 import { Error404Component } from './containers/error404/error404.component';
 
-
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, BasketPopupComponent, HeaderLayoutComponent, BasketIconComponent, Error404Component],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    RouterModule,
-    StoreModule,
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    BasketPopupComponent,
+    HeaderLayoutComponent,
+    BasketIconComponent,
+    Error404Component,
   ],
-  exports: [HeaderComponent,FooterComponent]
+  imports: [CommonModule, HttpClientModule, RouterModule, StoreModule],
+  exports: [HeaderComponent, FooterComponent],
 })
-export class CoreModule { }
+export class CoreModule {}

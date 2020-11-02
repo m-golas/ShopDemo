@@ -1,15 +1,15 @@
 @import 'variables';
 
-.delete-button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 32px;
-    height: 32px;
-    background-color: transparent;
-    border-radius: 8px;
+.delete-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border-radius: 8px;
 
-    &:hover{
-        background-color: $base-background;
-    }
+  &:hover {
+    background-color: $base-background;
+  }
 }

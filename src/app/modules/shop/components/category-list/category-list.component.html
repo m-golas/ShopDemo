@@ -1,14 +1,16 @@
 <h3 class="selector-title">Kategorie</h3>
 <ul class="aside-menu">
-    <ng-container *ngFor="let category of categories">
-        <li>
-            <a 
-                class="aside-menu__link" 
-                [ngClass]="{'aside-menu__link--is-active': category.id === selected?.id}" 
-                routerLink="/shop/{{category.id}}"
-            >
-                {{category.displayName}}
-            </a>
-        </li>
-    </ng-container>
+  <ng-container *ngFor="let category of categories">
+    <li>
+      <a
+        class="aside-menu__link"
+        [ngClass]="{
+          'aside-menu__link--is-active': category.id === selected?.id
+        }"
+        routerLink="/shop/{{ category.id }}"
+      >
+        {{ category.displayName }}
+      </a>
+    </li>
+  </ng-container>
 </ul>

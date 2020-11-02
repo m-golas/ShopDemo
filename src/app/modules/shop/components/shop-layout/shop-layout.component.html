@@ -1,34 +1,31 @@
 <ng-template #closed>
-    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
-    <span class="category-content-switch__text">Wybierz kategorie</span>
+  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+    <path d="M0 0h24v24H0V0z" fill="none" />
+    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+  </svg>
+  <span class="category-content-switch__text">Wybierz kategorie</span>
 </ng-template>
 
 <section class="shop-main">
-    <div class="shop-container">
-        <div 
-            class="shop-container__sidebar" 
-            [ngClass]="{'shop-container__sidebar--visible': open === true}"
-        >
-            <ng-content select="[side]"></ng-content>
-        </div>
-        <div class="shop-container__main">
-            <div 
-                class="shop-container__main-header"
-                [ngClass]="{'shop-container__main-header--visible': open === true}"
-            >
-                <button class="category-content-switch" (click)="switchMenu.emit()">
-                    <ng-container *ngIf="open; else closed">
-                        <svg  xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
-                        <span class="category-content-switch__text category-content-switch__text--close">Zamknij kategorie</span>
-                    </ng-container>
-                </button>
-            </div>
-            <div 
-                class="shop-container__main-content"
-                [ngClass]="{'shop-container__main-content--blur': open === true}"
-            >
-                <ng-content></ng-content>
-            </div>
-        </div>
+  <div class="shop-container">
+    <div class="shop-container__sidebar" [ngClass]="{ 'shop-container__sidebar--visible': open === true }">
+      <ng-content select="[side]"></ng-content>
     </div>
+    <div class="shop-container__main">
+      <div class="shop-container__main-header" [ngClass]="{ 'shop-container__main-header--visible': open === true }">
+        <button class="category-content-switch" (click)="switchMenu.emit()">
+          <ng-container *ngIf="open; else closed">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+              <path d="M0 0h24v24H0V0z" fill="none" />
+              <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
+            </svg>
+            <span class="category-content-switch__text category-content-switch__text--close">Zamknij kategorie</span>
+          </ng-container>
+        </button>
+      </div>
+      <div class="shop-container__main-content" [ngClass]="{ 'shop-container__main-content--blur': open === true }">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
 </section>

@@ -9,9 +9,9 @@ import * as fromStore from '../../../modules/shop/store/reducers';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent{
+export class HeaderComponent {
   isCartLoaded$: Observable<boolean>;
   cart$: Observable<CartItem[]>;
   amount$: Observable<number>;

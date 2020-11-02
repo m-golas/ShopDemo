@@ -4,13 +4,10 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-error404',
   templateUrl: './error404.component.html',
   styleUrls: ['./error404.component.scss'],
-  host: {'class': 'flex-container'}
+  host: { class: 'flex-container' },
 })
 export class Error404Component implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

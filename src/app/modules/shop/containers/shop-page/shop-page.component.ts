@@ -12,7 +12,7 @@ import * as shopAction from '../../store/actions';
   templateUrl: './shop-page.component.html',
   styleUrls: ['./shop-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {'class': 'flex-container'}
+  host: { class: 'flex-container' },
 })
 export class ShopPageComponent implements OnInit {
   categories$: Observable<ShopCategory[]>;
@@ -27,18 +27,17 @@ export class ShopPageComponent implements OnInit {
     this.showSidenav$ = this.store.select(fromShop.selectShowSidenav);
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   addToCart(product: ShopProduct): void {
-    this.store.dispatch(shopAction.addProductToCart({product}));
+    this.store.dispatch(shopAction.addProductToCart({ product }));
   }
 
   substractFromCart(product: ShopProduct): void {
-    this.store.dispatch(shopAction.substractProductFromCart({product}));
+    this.store.dispatch(shopAction.substractProductFromCart({ product }));
   }
 
-  switchMenu(): void{
+  switchMenu(): void {
     this.store.dispatch(shopAction.switchSidenav());
   }
 }

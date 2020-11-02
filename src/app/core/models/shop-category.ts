@@ -1,4 +1,4 @@
 export interface ShopCategory {
-    id: number;
-    displayName: string;
+  id: number;
+  displayName: string;
 }

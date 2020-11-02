@@ -1,32 +1,28 @@
-import { createReducer, on } from "@ngrx/store";
+import { createReducer, on } from '@ngrx/store';
 import * as shopAction from '../actions';
 
 export const layoutFeatureKey = 'layout';
 
 export interface State {
-    showSidenav: boolean;
+  showSidenav: boolean;
 }
 
 export const initialState = {
-    showSidenav: false
-}
+  showSidenav: false,
+};
 
 export const reducer = createReducer(
-    initialState,
+  initialState,
 
-    on(shopAction.switchSidenav, (state) => (
-        {
-            ...state,
-            showSidenav: !state.showSidenav
-        }
-    )),
+  on(shopAction.switchSidenav, (state) => ({
+    ...state,
+    showSidenav: !state.showSidenav,
+  })),
 
-    on(shopAction.closeSidenav, (state) => (
-        {
-            ...state,
-            showSidenav: false
-        }
-    )),
+  on(shopAction.closeSidenav, (state) => ({
+    ...state,
+    showSidenav: false,
+  }))
 );
 
-export const selectShowSidenav= (state: State) => state.showSidenav;
+export const selectShowSidenav = (state: State) => state.showSidenav;

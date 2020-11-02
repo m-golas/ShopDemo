@@ -1,28 +1,28 @@
 @import 'variables';
 
-.cart-summary{
-    @include card;
-    @include shadow-sm;
-    padding: 24px 16px;
+.cart-summary {
+  @include card;
+  @include shadow-sm;
+  padding: 24px 16px;
 
-    &__price-container{
-        display: flex;
-        justify-content: space-between;
-        font-size: 18px;
-        font-weight: 600;
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    color: white;
+    background-color: $color-secondary;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover {
+      color: white;
     }
-
-    &__button{
-        display: flex;
-        justify-content: center;
-        padding: 8px;
-        color: white;
-        background-color: $color-secondary;
-        border-radius:  8px;
-        cursor: pointer;
-
-        &:hover{
-            color: white;
-        }
-    }
+  }
 }

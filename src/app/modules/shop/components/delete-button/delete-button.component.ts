@@ -4,10 +4,10 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angul
   selector: 'app-delete-button',
   templateUrl: './delete-button.component.html',
   styleUrls: ['./delete-button.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DeleteButtonComponent {
   @Output() remove = new EventEmitter<any>();
 
-  constructor() { }
+  constructor() {}
 }

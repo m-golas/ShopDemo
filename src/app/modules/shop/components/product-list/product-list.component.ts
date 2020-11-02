@@ -5,7 +5,7 @@ import { ShopCategory } from 'src/app/core/models/shop-category';
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductListComponent {
   @Input() categorySelected: ShopCategory;

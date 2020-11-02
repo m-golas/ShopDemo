@@ -3,25 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module'
+import { CoreModule } from './core/core.module';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './core/store/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 
-
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
     EffectsModule.forRoot(),
     StoreModule.forRoot(reducers, {
-      metaReducers, 
+      metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
         strictActionImmutability: true,
@@ -29,11 +26,11 @@ import { EffectsModule } from '@ngrx/effects';
         strictActionSerializability: true,
         strictActionWithinNgZone: true,
         strictActionTypeUniqueness: true,
-      }
+      },
     }),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

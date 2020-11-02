@@ -10,10 +10,9 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ],
-      providers: [provideMockStore()]
-    })
-    .compileComponents();
+      declarations: [HeaderComponent],
+      providers: [provideMockStore()],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

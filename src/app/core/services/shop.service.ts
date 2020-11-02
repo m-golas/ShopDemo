@@ -6,25 +6,24 @@ import { ShopProduct } from '../models/shop-product';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ShopService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getCategories(): Observable<Array<ShopCategory>>{
+  getCategories(): Observable<Array<ShopCategory>> {
     return this.http.get<Array<ShopCategory>>(`${environment.baseUrl}/store/public/categories/active`);
   }
 
-  getCategory(id: number): Observable<ShopCategory>{
+  getCategory(id: number): Observable<ShopCategory> {
     return this.http.get<ShopCategory>(`${environment.baseUrl}/store/public/category/${id}`);
   }
 
-  getProductsByCategory(id: number): Observable<ShopProduct[]>{
+  getProductsByCategory(id: number): Observable<ShopProduct[]> {
     return this.http.get<ShopProduct[]>(`${environment.baseUrl}/store/public/category/products/active/${id}`);
   }
 
-  getProduct(id: number): Observable<ShopProduct>{
+  getProduct(id: number): Observable<ShopProduct> {
     return this.http.get<ShopProduct>(`${environment.baseUrl}/store/public/category/product/${id}`);
   }
 }

@@ -10,10 +10,9 @@ describe('CartPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CartPageComponent ],
-      providers: [provideMockStore()]
-    })
-    .compileComponents();
+      declarations: [CartPageComponent],
+      providers: [provideMockStore()],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

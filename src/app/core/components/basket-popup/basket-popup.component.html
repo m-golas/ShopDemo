@@ -1,30 +1,37 @@
 <ng-template #empty>
-    <p class="inner-empty">Twój koszyk jest pusty</p>
+  <p class="inner-empty">Twój koszyk jest pusty</p>
 </ng-template>
 
 <div class="basket-popup">
-    <ng-container *ngIf="cart && amount > 0; else empty">
-        <div class="basket-inner">
-            <div class="basket-inner__title-container">
-                <h3 class="basket-inner__title">Koszyk 
-                    <span>
-                        ({{amount}})
-                    </span>
-                </h3>
-            </div>
-            <section class="basket-inner__product-container">
-                <article *ngFor="let item of cart" class="basket-product">
-                    <a><h2 class="basket-product__title">{{item.item.displayName}}</h2></a>
-                    <p class="basket-product__price-info">
-                        <span>{{item.amount}} szt.</span>
-                        <span>{{item.item.price}}zł</span>
-                    </p>
-                </article>
-            </section>
-            <section class="basket-summary">
-                <p class="basket-summary__info">Do zapłaty <span>{{price}} zł</span></p>
-                <a class="basket-summary__button" routerLink="/shop/cart">Przejdź do koszyka</a>
-            </section>
-        </div>
-    </ng-container>
+  <ng-container *ngIf="cart && amount && amount > 0; else empty">
+    <div class="basket-inner">
+      <div class="basket-inner__title-container">
+        <h3 class="basket-inner__title">
+          Koszyk
+          <span> ({{ amount }}) </span>
+        </h3>
+      </div>
+      <section class="basket-inner__product-container">
+        <article *ngFor="let item of cart" class="basket-product">
+          <a>
+            <h2 class="basket-product__title">
+              {{ item.item.displayName }}
+            </h2>
+          </a>
+          <p class="basket-product__price-info">
+            <span>{{ item.amount }} szt.</span>
+            <span>{{ item.item.price }}zł</span>
+          </p>
+        </article>
+      </section>
+      <section class="basket-summary">
+        <p class="basket-summary__info">
+          Do zapłaty <span>{{ price }} zł</span>
+        </p>
+        <a class="basket-summary__button" routerLink="/shop/cart">
+          Przejdź do koszyka
+        </a>
+      </section>
+    </div>
+  </ng-container>
 </div>
